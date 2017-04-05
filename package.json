@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ChannVincent/react_web_application/issues"
   },
-  "homepage": "https://github.com/ChannVincent/react_web_application#readme"
+  "homepage": "https://github.com/ChannVincent/react_web_application#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
