@@ -21,3 +21,9 @@ Version :
 
 React IDE :  
 https://atom.io/
+
+Install node modules :
+$ npm install
+
+Start server :
+node server.js
