@@ -1,0 +1,19 @@
+{
+  "name": "react_web_application",
+  "version": "1.0.0",
+  "description": "Simple react app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChannVincent/react_web_application.git"
+  },
+  "author": "Vincent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChannVincent/react_web_application/issues"
+  },
+  "homepage": "https://github.com/ChannVincent/react_web_application#readme"
+}
