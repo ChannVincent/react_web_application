@@ -20,10 +20,10 @@ Version :
 ## Development
 
 React IDE :  
-https://atom.io/
+https://atom.io/  
 
-Install node modules :
-$ npm install
+Install node modules :  
+$ npm install  
 
-Start server :
-node server.js
+Start server :  
+$ node server.js  
