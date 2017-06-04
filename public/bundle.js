@@ -48,111 +48,9 @@
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
-
-	// result component
-	var GreeterMessage = React.createClass({
-	  displayName: 'GreeterMessage',
-
-	  render: function render() {
-	    var _props = this.props,
-	        name = _props.name,
-	        message = _props.message;
-
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'h1',
-	        null,
-	        name
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        message
-	      )
-	    );
-	  }
-	});
-
-	// form component
-	var GreeterForm = React.createClass({
-	  displayName: 'GreeterForm',
-
-	  onFormSubmit: function onFormSubmit(event) {
-	    event.preventDefault();
-	    var name = this.refs.name.value;
-	    var message = this.refs.message.value;
-	    var data = {};
-	    if (name.length > 0) {
-	      this.refs.name.value = '';
-	      data.name = name;
-	    }
-	    if (message.length > 0) {
-	      this.refs.message.value = '';
-	      data.message = message;
-	    }
-	    this.props.onNewData(data);
-	  },
-	  render: function render() {
-	    return React.createElement(
-	      'form',
-	      { onSubmit: this.onFormSubmit },
-	      React.createElement(
-	        'div',
-	        null,
-	        React.createElement('input', { type: 'text', ref: 'name', placeholder: 'Enter name' })
-	      ),
-	      React.createElement(
-	        'div',
-	        null,
-	        React.createElement('textarea', { type: 'text', ref: 'message', placeholder: 'Enter message' })
-	      ),
-	      React.createElement(
-	        'div',
-	        null,
-	        React.createElement(
-	          'button',
-	          null,
-	          'Send'
-	        )
-	      )
-	    );
-	  }
-	});
-
-	// container component
-	var Greeter = React.createClass({
-	  displayName: 'Greeter',
-
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      name: 'React',
-	      message: 'This is from the component'
-	    };
-	  },
-	  getInitialState: function getInitialState() {
-	    return {
-	      name: this.props.name,
-	      message: this.props.message
-	    };
-	  },
-	  handleNewData: function handleNewData(data) {
-	    this.setState(data);
-	  },
-	  render: function render() {
-	    var _state = this.state,
-	        name = _state.name,
-	        message = _state.message;
-
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(GreeterMessage, { name: name, message: message }),
-	      React.createElement(GreeterForm, { onNewData: this.handleNewData })
-	    );
-	  }
-	});
+	//var GreeterMessage = require('./components/GreeterMessage');
+	//var GreeterForm = require('./components/GreeterForm');
+	var Greeter = __webpack_require__(159);
 
 	// root
 	var firstName = 'Andrew';
@@ -19852,6 +19750,143 @@
 
 	module.exports = __webpack_require__(3);
 
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var GreeterForm = __webpack_require__(160);
+	var GreeterMessage = __webpack_require__(161);
+
+	// container component
+	var Greeter = React.createClass({
+	  displayName: 'Greeter',
+
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      name: 'React',
+	      message: 'This is from the component'
+	    };
+	  },
+	  getInitialState: function getInitialState() {
+	    return {
+	      name: this.props.name,
+	      message: this.props.message
+	    };
+	  },
+	  handleNewData: function handleNewData(data) {
+	    this.setState(data);
+	  },
+	  render: function render() {
+	    var _state = this.state,
+	        name = _state.name,
+	        message = _state.message;
+
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(GreeterMessage, { name: name, message: message }),
+	      React.createElement(GreeterForm, { onNewData: this.handleNewData })
+	    );
+	  }
+	});
+
+	module.exports = Greeter;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(158);
+
+	// form component
+	var GreeterForm = React.createClass({
+	  displayName: 'GreeterForm',
+
+	  onFormSubmit: function onFormSubmit(event) {
+	    event.preventDefault();
+	    var name = this.refs.name.value;
+	    var message = this.refs.message.value;
+	    var data = {};
+	    if (name.length > 0) {
+	      this.refs.name.value = '';
+	      data.name = name;
+	    }
+	    if (message.length > 0) {
+	      this.refs.message.value = '';
+	      data.message = message;
+	    }
+	    this.props.onNewData(data);
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'form',
+	      { onSubmit: this.onFormSubmit },
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement('input', { type: 'text', ref: 'name', placeholder: 'Enter name' })
+	      ),
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement('textarea', { type: 'text', ref: 'message', placeholder: 'Enter message' })
+	      ),
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'button',
+	          null,
+	          'Send'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = GreeterForm;
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var GreeterMessage = React.createClass({
+	  displayName: 'GreeterMessage',
+
+	  render: function render() {
+	    var _props = this.props,
+	        name = _props.name,
+	        message = _props.message;
+
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h1',
+	        null,
+	        name
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        message
+	      )
+	    );
+	  }
+	});
+
+	module.exports = GreeterMessage;
 
 /***/ }
 /******/ ]);
