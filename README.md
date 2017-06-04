@@ -37,3 +37,8 @@ Start server :
 Shut down current server in terminal :
 
     $ Ctrl + C
+
+Automatic webpack bundling :
+
+    $ webpack -w (it will listen to every changes mede in your files)
+    $ node server.js (run in an other CLI windows)
