@@ -29,3 +29,11 @@ Install node modules :
 Start server :  
 
     $ node server.js  
+
+Web pack your files :
+
+    $ webpack ./public/app.js ./public/bundle.js
+
+Shut down current server in terminal :
+
+    $ Ctrl + C
