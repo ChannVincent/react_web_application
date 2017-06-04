@@ -26,13 +26,13 @@ Install node modules :
 
     $ npm install  
 
+Web pack your files :
+
+    $ webpack
+
 Start server :  
 
     $ node server.js  
-
-Web pack your files :
-
-    $ webpack ./public/app.js ./public/bundle.js
 
 Shut down current server in terminal :
 
