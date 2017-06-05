@@ -57,8 +57,8 @@
 
 	var Main = __webpack_require__(216);
 	var Weather = __webpack_require__(218);
-	var About = __webpack_require__(219);
-	var Exemples = __webpack_require__(220);
+	var About = __webpack_require__(221);
+	var Exemples = __webpack_require__(222);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -24875,9 +24875,9 @@
 	      null,
 	      _react2.default.createElement(_Nav2.default, null),
 	      _react2.default.createElement(
-	        'h2',
+	        'p',
 	        null,
-	        'Main Component'
+	        ' ====================================================== '
 	      ),
 	      this.props.children
 	    );
@@ -24943,24 +24943,111 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _WeatherForm = __webpack_require__(219);
+
+	var _WeatherForm2 = _interopRequireDefault(_WeatherForm);
+
+	var _WeatherMessage = __webpack_require__(220);
+
+	var _WeatherMessage2 = _interopRequireDefault(_WeatherMessage);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Weather = _react2.default.createClass({
 	  displayName: 'Weather',
 
+
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'h3',
+	      'div',
 	      null,
-	      'Weather Component'
+	      _react2.default.createElement(
+	        'h3',
+	        null,
+	        'Weather Component'
+	      ),
+	      _react2.default.createElement(_WeatherForm2.default, null),
+	      _react2.default.createElement(_WeatherMessage2.default, null)
 	    );
 	  }
+
 	});
 
 	module.exports = Weather;
 
+	/*
+	<GreeterForm onNewData={ this.handleNewData } />
+	<GreeterMessage message={ message }/>
+
+	*/
+
 /***/ }),
 /* 219 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var GreeterForm = _react2.default.createClass({
+	  displayName: "GreeterForm",
+
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      "form",
+	      null,
+	      _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement("input", { type: "text" }),
+	        _react2.default.createElement(
+	          "button",
+	          null,
+	          "Get Weather"
+	        )
+	      )
+	    );
+	  }
+
+	});
+
+	module.exports = GreeterForm;
+
+/***/ }),
+/* 220 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var WeatherMessage = _react2.default.createClass({
+	  displayName: 'WeatherMessage',
+
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'h3',
+	      null,
+	      'It is 40 in Philadelphia.'
+	    );
+	  }
+
+	});
+
+	module.exports = WeatherMessage;
+
+/***/ }),
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24986,7 +25073,7 @@
 	module.exports = About;
 
 /***/ }),
-/* 220 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
