@@ -24957,6 +24957,20 @@
 	  displayName: 'Weather',
 
 
+	  getInitialState: function getInitialState() {
+	    return {
+	      location: 'Miami',
+	      temp: 34
+	    };
+	  },
+
+	  handleSearch: function handleSearch(location) {
+	    this.setState({
+	      location: location,
+	      temp: 23
+	    });
+	  },
+
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
@@ -24966,8 +24980,8 @@
 	        null,
 	        'Weather Component'
 	      ),
-	      _react2.default.createElement(_WeatherForm2.default, null),
-	      _react2.default.createElement(_WeatherMessage2.default, null)
+	      _react2.default.createElement(_WeatherForm2.default, { onSearch: this.handleSearch }),
+	      _react2.default.createElement(_WeatherMessage2.default, { temp: this.state.temp, location: this.state.location })
 	    );
 	  }
 
@@ -24985,7 +24999,7 @@
 /* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var _react = __webpack_require__(1);
 
@@ -24993,22 +25007,35 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	/*
+	event.preventDefault : prevent from reloading the whole page after submitting
+	*/
 	var GreeterForm = _react2.default.createClass({
-	  displayName: "GreeterForm",
+	  displayName: 'GreeterForm',
 
+
+	  onFormSubmit: function onFormSubmit(event) {
+	    event.preventDefault();
+	    var location = this.refs.location.value;
+
+	    if (location.length > 0) {
+	      this.refs.location.value = '';
+	      this.props.onSearch(location);
+	    }
+	  },
 
 	  render: function render() {
 	    return _react2.default.createElement(
-	      "form",
-	      null,
+	      'form',
+	      { onSubmit: this.onFormSubmit },
 	      _react2.default.createElement(
-	        "div",
+	        'div',
 	        null,
-	        _react2.default.createElement("input", { type: "text" }),
+	        _react2.default.createElement('input', { type: 'text', ref: 'location' }),
 	        _react2.default.createElement(
-	          "button",
+	          'button',
 	          null,
-	          "Get Weather"
+	          'Get Weather'
 	        )
 	      )
 	    );
@@ -25035,10 +25062,25 @@
 
 
 	  render: function render() {
+	    var _props = this.props,
+	        temp = _props.temp,
+	        location = _props.location;
+
+	    if (temp === undefined || location === undefined) {
+	      return _react2.default.createElement(
+	        'h3',
+	        null,
+	        'temperature or location must be defined.'
+	      );
+	    }
 	    return _react2.default.createElement(
 	      'h3',
 	      null,
-	      'It is 40 in Philadelphia.'
+	      'It is ',
+	      temp,
+	      ' in ',
+	      location,
+	      '.'
 	    );
 	  }
 
