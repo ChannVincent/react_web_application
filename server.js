@@ -5,14 +5,14 @@ var app = express();
 const PORT = process.env.PORT || 3000;
 
 // workaround for weather API to work
-app.use(function (req, res, next) {
-  if (req.headers['w-forwarded-proto'] === 'http') {
-    next();
-  }
-  else {
-    res.redirect('http://' + req.hostname + req.url);
-  }
-});
+// app.use(function (req, res, next) {
+//   if (req.headers['w-forwarded-proto'] === 'http') {
+//     next();
+//   }
+//   else {
+//     res.redirect('http://' + req.hostname + req.url);
+//   }
+// });
 
 app.use(express.static('public'));
 
