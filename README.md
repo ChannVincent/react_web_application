@@ -54,3 +54,21 @@ In the React tab you can access to the whole React app & states in the main wind
 
 To stop at a certain point you can add "debugger;" anywhere in your code while de developer tool is open to stop your code at this point.
 In combination with "source-map" (add this line in your webpack.config : "devtool: 'inline-source-map'") and developer console, debugging become a peace of cake.
+
+
+## Heroku
+
+Install heroku CLI :
+https://devcenter.heroku.com/articles/heroku-cli
+
+Launch and login :
+$ heroku
+
+Init your Git heroku project : 
+$ cd your/project
+$ heroku create
+
+Push git repositories :
+$ cd your/project
+$ git remote -v (check what is set)
+$ git push heroku master
