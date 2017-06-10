@@ -42,3 +42,15 @@ Automatic webpack bundling :
 
     $ webpack -w (it will listen to every changes mede in your files)
     $ node server.js (run in an other CLI windows)
+
+
+## Debugging
+
+Install React webchrome module at : 
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+
+Launch developement tools in Chrome and go to "React" tab.
+In the React tab you can access to the whole React app & states in the main window.
+
+To stop at a certain point you can add "debugger;" anywhere in your code while de developer tool is open to stop your code at this point.
+In combination with "source-map" (add this line in your webpack.config : "devtool: 'inline-source-map'") and developer console, debugging become a peace of cake.
