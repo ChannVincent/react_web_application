@@ -46,7 +46,7 @@ Automatic webpack bundling :
 
 ## Debugging
 
-Install React webchrome module at : 
+Install React webchrome module at :
 https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
 
 Launch developement tools in Chrome and go to "React" tab.
@@ -62,13 +62,16 @@ Install heroku CLI :
 https://devcenter.heroku.com/articles/heroku-cli
 
 Launch and login :
-$ heroku
 
-Init your Git heroku project : 
-$ cd your/project
-$ heroku create
+    $ heroku
+
+Init your Git heroku project :
+
+    $ cd your/project
+    $ heroku create
 
 Push git repositories :
-$ cd your/project
-$ git remote -v (check what is set)
-$ git push heroku master
+
+    $ cd your/project
+    $ git remote -v (check what is set)
+    $ git push heroku master
