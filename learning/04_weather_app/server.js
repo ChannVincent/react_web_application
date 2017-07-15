@@ -6,11 +6,11 @@ const PORT = process.env.PORT || 3000;
 
 // workaround for weather API to work
 app.use(function (req, res, next) {
-  if (req.headers['w-forwarded-proto'] === 'http') {
-    next();
+  if (req.headers['w-forwarded-proto'] === 'https') {
+    res.redirect('http://' + req.hostname + req.url);
   }
   else {
-    res.redirect('http://' + req.hostname + req.url);
+    next();
   }
 });
 
