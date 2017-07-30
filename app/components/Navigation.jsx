@@ -22,7 +22,7 @@ class Navigation extends Component {
         <div className="top-bar-right">
           <ul className="menu">
             <li className="menu-text">
-              Created by Vincent Chann
+              Created by <a>Vincent Chann</a>
             </li>
           </ul>
         </div>
