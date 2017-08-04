@@ -75,3 +75,8 @@ Push git repositories :
     $ cd your/project
     $ git remote -v (check what is set)
     $ git push heroku master
+
+## Unit Test
+
+Expect library :
+https://github.com/mjackson/expect
